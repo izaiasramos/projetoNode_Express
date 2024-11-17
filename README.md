@@ -27,3 +27,23 @@ app.listen(8081, function(){//a função app.listen diz ao nodejs, o servidor es
     console.log("Server is runninng on url http://localhost:8081");
 })//tem que estar na ultima linha do meu codigo.
 //PARA ATIVAR  O SERVIDOR, NO TERMINAL DIGITAR: node index.js DEPOIS SO ACESSAR VIA URL: http://localhost:8081
+
+Este projeto é baseado em umma serie de videos do canal do youtube: Victor Lima em: Curso de Node.js 
+
+video 7: Rotas #07   - ensina a criar rotas no Express e criar um servidor para acessar o projeto via url a web.
+Url: https://www.youtube.com/watch?v=UMI7kFwmAHo&t=187s
+
+
+Video 8: Parâmetros #08 - parâmetros são uma forma de uma deixar as rotas dinâmicas.
+url: https://www.youtube.com/watch?v=G9b-Zi0rg3o
+
+Para fins de exemplo criamos uma rota chamada ola e outra cargo, e a função dessas rotas é exibir o nome e o cargo de alguma pessoa: ola fulano programador.
+
+para criar os parametros colocamos na rota :parametro
+ex: app.get("/ola/:nome/:cargo", function(req, res){
+ e aqui  dentro da função callback, pegamos os parametros da rota e exibimos na tela: 
+    res.send("<h1>Ola " + req.params.nome + "</h1>" + "<h2>Seu cargo é: " + req.params.cargo + "</h2>");
+})
+na url digitamos o valoor dos parametros, ex: http://localhost:8081/ola/joao/programador
+
+Video 9: Query Params #09 - Query Params são parametros que são passados na url, e são opcionais, ou seja, não são obrigatórios.
