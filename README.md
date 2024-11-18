@@ -29,6 +29,7 @@ app.listen(8081, function(){//a função app.listen diz ao nodejs, o servidor es
 //PARA ATIVAR  O SERVIDOR, NO TERMINAL DIGITAR: node index.js DEPOIS SO ACESSAR VIA URL: http://localhost:8081
 
 req E res: 
+
 req = request - é um objeto que contém informações sobre a requisição HTTP feita pelo cliente.
                 dentro desse objeto tenho atributos com funções que eu posso usar para acessar informações da requisição.
                 um desses atributos é o query que uso para acessar informações da requisição via url encontrada apos o ?.
@@ -36,26 +37,27 @@ req = request - é um objeto que contém informações sobre a requisição HTTP
 
 res = response - é um objeto que contém informações sobre a resposta HTTP que será enviada de volta ao cliente.
                 dentro desse objeto tenho atributos com funções que eu posso usar para acessar informações da resposta.
-                um desses atributos é o send que uso para enviar uma resposta para o cliente.
-                Ex: res.send("Bem-vindo ao meu app!");
-                um outro atributo é o sendFile que uso para enviar um arquivo para o cliente.
-                Ex: res.sendFile(__dirname + "/index.html");
-                um outro atributo é o redirect que uso para redirecionar o cliente para outra rota.
-                Ex: res.redirect("/sobre");
-                um outro atributo é o json que uso para enviar um objeto json para o cliente.
-                Ex: res.json({nome: "Victor", idade: 25});
-                um outro atributo é o status que uso para definir o status da resposta.
-                Ex: res.status(404).send("Página não encontrada!");
-                um outro atributo é o type que uso para definir o tipo de conteúdo da resposta.
-                Ex: res.type("text/html");
-                um outro atributo é o params que iso para acessar parametros que foram enviado via url
-                Ex: 
-                app.get("/ola/:nome/:cargo", function(req, res){
-                res.send("<h1> Olá " + req.params.nome + "</h1>" + "<br/> <h2>Seu cargo é: " + req.params.cargo + "</h2>" + "<br/> <h2> Seja bem vindo ao meu servidor</h2>"
-                + "<br/> <h3>Esse é um exemplo de rota dinamica</h3>"
-   );
-});
-Este projeto é baseado em umma serie de videos do canal do youtube: Victor Lima em: Curso de Node.js 
+                - Um desses atributos é o send que uso para enviar uma resposta para o cliente.
+                    Ex: res.send("Bem-vindo ao meu app!");
+                - Um outro atributo é o sendFile que uso para enviar um arquivo para o cliente.
+                    Ex: res.sendFile(__dirname + "/index.html");
+                - Um outro atributo é o redirect que uso para redirecionar o cliente para outra rota.
+                    Ex: res.redirect("/sobre");
+                - Um outro atributo é o json que uso para enviar um objeto json para o cliente.
+                    Ex: res.json({nome: "Victor", idade: 25});
+                - Um outro atributo é o status que uso para definir o status da resposta.
+                    Ex: res.status(404).send("Página não encontrada!");
+                - Um outro atributo é o type que uso para definir o tipo de conteúdo da resposta.
+                    Ex: res.type("text/html");
+                - Um outro atributo é o params que iso para acessar parametros que foram enviado via url
+                    Ex: 
+                    app.get("/ola/:nome/:cargo", function(req, res){
+                        res.send("<h1> Olá " + req.params.nome + "</h1>" + "<br/> <h2>Seu cargo é: " + req.params.cargo + "</h2>" + "<br/> <h2> Seja bem vindo ao meu servidor</h2>"
+                        + "<br/> <h3>Esse é um exemplo de rota dinamica</h3>"
+                        );
+                    });
+
+Este projeto é baseado em uma serie de videos do canal do youtube: Victor Lima em: Curso de Node.js 
 
 video 7: Rotas #07   - ensina a criar rotas no Express e criar um servidor para acessar o projeto via url a web.
 Url: https://www.youtube.com/watch?v=UMI7kFwmAHo&t=187s
@@ -73,4 +75,10 @@ ex: app.get("/ola/:nome/:cargo", function(req, res){
 })
 na url digitamos o valoor dos parametros, ex: http://localhost:8081/ola/joao/programador
 
-Video 9: Query Params #09 - Query Params são parametros que são passados na url, e são opcionais, ou seja, não são obrigatórios.
+Video 9: Nodemon #09 - O Nodemon automatiza o processo de atualizar o servidor a cada alteração no codigo, atualmente tenho que fazer manualmente parando o servidor, e reativando com comando no terminal node index.js
+
+PARA INSTALAR O NODEMOM: NPM INSTALL NODEMOM -G
+
+é só inserir esse comando no terminal/cmd: npm install nodemon -g
+
+a flag -g indica que é para instalar globalmente, ou seja, na maquina, assim ficará disponivel para qualquer projeto que precisar.
